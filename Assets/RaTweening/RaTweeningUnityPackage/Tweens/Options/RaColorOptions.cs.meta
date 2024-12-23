@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: af08d1915ea5b40459fe1d0e66efe585
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 231893
+  packageName: RaTweening
+  packageVersion: 1.0.1
+  assetPath: Assets/RaTweening/RaTweeningUnityPackage/Tweens/Options/RaColorOptions.cs
+  uploadId: 534167

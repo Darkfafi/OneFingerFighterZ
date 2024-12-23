@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: d6f5ee5fae10fe647abab7a8190628ba
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 231893
+  packageName: RaTweening
+  packageVersion: 1.0.1
+  assetPath: Assets/RaTweening/RaTweeningUnityPackage/Tweens/Lambda/RaTweenLambdaFloat.cs
+  uploadId: 534167

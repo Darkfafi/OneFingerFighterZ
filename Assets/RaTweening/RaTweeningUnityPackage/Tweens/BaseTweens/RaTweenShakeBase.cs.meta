@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 954df8ff1a095ab43b822205d2ecc3ac
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 231893
+  packageName: RaTweening
+  packageVersion: 1.0.1
+  assetPath: Assets/RaTweening/RaTweeningUnityPackage/Tweens/BaseTweens/RaTweenShakeBase.cs
+  uploadId: 534167

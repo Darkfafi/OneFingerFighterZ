@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 4c71397d1e23271459e5dbe69fb8c21f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 231893
+  packageName: RaTweening
+  packageVersion: 1.0.1
+  assetPath: Assets/RaTweening/RaTweeningUnityPackage/Tweens/Camera/RaTweenRect.cs
+  uploadId: 534167

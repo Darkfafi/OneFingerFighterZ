@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 51f73e05d26f11f459270e73d20bfced
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 231893
+  packageName: RaTweening
+  packageVersion: 1.0.1
+  assetPath: Assets/RaTweening/RaTweeningUnityPackage/package.json
+  uploadId: 534167

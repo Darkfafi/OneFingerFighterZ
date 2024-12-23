@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 3f8a0a9d3f66a6a40bad1e3c93ae46c2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 231893
+  packageName: RaTweening
+  packageVersion: 1.0.1
+  assetPath: Assets/RaTweening/RaTweeningUnityPackage/Tweens/Lambda/RaTweenLambdaRect.cs
+  uploadId: 534167

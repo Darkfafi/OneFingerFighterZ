@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ad2ea09ce19c0bd4d9c3610aa7adf7d1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 231893
+  packageName: RaTweening
+  packageVersion: 1.0.1
+  assetPath: Assets/RaTweening/RaTweeningUnityPackage/Tweens/UI/RectTransform/RaTweenSizeDelta.cs
+  uploadId: 534167

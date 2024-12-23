@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4c80c185a8a1c9f498be8ec05a757f6d
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 231893
+  packageName: RaTweening
+  packageVersion: 1.0.1
+  assetPath: Assets/RaTweening/RaTweeningUnityPackage/RaTweening.asmdef
+  uploadId: 534167

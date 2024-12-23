@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 2653d2c1bb5ebcd4da230b118a973c77
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 231893
+  packageName: RaTweening
+  packageVersion: 1.0.1
+  assetPath: Assets/RaTweening/RaTweeningUnityPackage/Core/RaTweeningEngine.cs
+  uploadId: 534167

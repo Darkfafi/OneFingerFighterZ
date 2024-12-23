@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 1b7ecabb0ae00804eb03f105831d0e46
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 231893
+  packageName: RaTweening
+  packageVersion: 1.0.1
+  assetPath: Assets/RaTweening/RaTweeningUnityPackage/Tweens/Camera/RaTweenNearClipPlane.cs
+  uploadId: 534167

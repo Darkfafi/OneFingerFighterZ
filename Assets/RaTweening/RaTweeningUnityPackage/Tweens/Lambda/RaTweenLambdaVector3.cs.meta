@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e3d5b06fff228af40be0d3f82d8f79f5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 231893
+  packageName: RaTweening
+  packageVersion: 1.0.1
+  assetPath: Assets/RaTweening/RaTweeningUnityPackage/Tweens/Lambda/RaTweenLambdaVector3.cs
+  uploadId: 534167

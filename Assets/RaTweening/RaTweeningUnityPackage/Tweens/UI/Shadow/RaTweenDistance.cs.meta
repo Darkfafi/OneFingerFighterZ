@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 140b323f95273024d81ce6f9875dfc7e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 231893
+  packageName: RaTweening
+  packageVersion: 1.0.1
+  assetPath: Assets/RaTweening/RaTweeningUnityPackage/Tweens/UI/Shadow/RaTweenDistance.cs
+  uploadId: 534167

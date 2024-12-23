@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: aa198e4962c7aae40bce89f499629f87
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 231893
+  packageName: RaTweening
+  packageVersion: 1.0.1
+  assetPath: Assets/RaTweening/RaTweeningUnityPackage/Tweens/UI/RectTransform/RaTweenAnchorMin.cs
+  uploadId: 534167

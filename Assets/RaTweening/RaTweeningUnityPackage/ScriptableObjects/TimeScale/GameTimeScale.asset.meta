@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c1d40a4a4c053c84c8dcf76bf8b15a95
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 231893
+  packageName: RaTweening
+  packageVersion: 1.0.1
+  assetPath: Assets/RaTweening/RaTweeningUnityPackage/ScriptableObjects/TimeScale/GameTimeScale.asset
+  uploadId: 534167

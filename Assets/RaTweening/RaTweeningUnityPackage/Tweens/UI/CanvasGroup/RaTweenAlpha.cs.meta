@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e4a928883a62fc84a848451ddd9af7cb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 231893
+  packageName: RaTweening
+  packageVersion: 1.0.1
+  assetPath: Assets/RaTweening/RaTweeningUnityPackage/Tweens/UI/CanvasGroup/RaTweenAlpha.cs
+  uploadId: 534167
