@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b35399fe58844e847bfdcda70d61182a
+guid: ac7fb823576cf4a48ad2500a2619f35d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8065192639892759548
-    second: goku_spritesheet_attack_2_0
+      213: -2073452130165049178
+    second: HUD - HP - DAMAGE_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -47,13 +47,13 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 0
+  spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -74,7 +74,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: goku_spritesheet_attack_2_0
+      name: HUD - HP - DAMAGE_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
-        width: 134
-        height: 106
+        width: 160
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,74 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cf327e989f15def60800000000000000
-      internalID: 8065192639892759548
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: goku_spritesheet_attack_2_1
-      rect:
-        serializedVersion: 2
-        x: 138
-        y: 0
-        width: 134
-        height: 106
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b775f5ffd847a3e449379a0412766477
-      internalID: -729941849
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: goku_spritesheet_attack_2_2
-      rect:
-        serializedVersion: 2
-        x: 274
-        y: 0
-        width: 134
-        height: 106
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3d7fbdb1832d69e419951f558dc5b83e
-      internalID: -2029394062
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: goku_spritesheet_attack_2_3
-      rect:
-        serializedVersion: 2
-        x: 410
-        y: 0
-        width: 134
-        height: 106
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 75a3c619fea9bc0488885d7c99b4aa5a
-      internalID: 1326301205
+      spriteID: 6a83cb2f54e9933e0800000000000000
+      internalID: -2073452130165049178
       vertices: []
       indices: 
       edges: []
@@ -191,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0ccefb4e0545c204ea6c41356c656e7c
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -200,11 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      goku_spritesheet_attack_2_0: 8065192639892759548
-      goku_spritesheet_attack_2_1: -729941849
-      goku_spritesheet_attack_2_2: -2029394062
-      goku_spritesheet_attack_2_3: 1326301205
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

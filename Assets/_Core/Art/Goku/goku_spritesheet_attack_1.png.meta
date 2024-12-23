@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ddf58f8882637d74486ee6a89e8a0473
+guid: a14bdc15ec633b84f8816004435395f7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7761591653286148944
-    second: goku_spritesheet_attack_3_0
+      213: 1264066334104768661
+    second: goku_spritesheet_attack_1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,133 +100,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: goku_spritesheet_attack_3_0
+      name: goku_spritesheet_attack_1_0
       rect:
         serializedVersion: 2
         x: 2
         y: 0
-        width: 158
-        height: 157
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 145
+        height: 118
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0b40e369389494490800000000000000
-      internalID: -7761591653286148944
+      spriteID: 59058d032adda8110800000000000000
+      internalID: 1264066334104768661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: goku_spritesheet_attack_3_1
+      name: goku_spritesheet_attack_1_1
       rect:
         serializedVersion: 2
-        x: 162
+        x: 149
         y: 0
-        width: 158
-        height: 157
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 145
+        height: 118
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60fca629b135d0f4cab6bcd0494727bf
-      internalID: 405646925
+      spriteID: 566bf70269a12dc41ac9c6b90402c120
+      internalID: 514785186
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: goku_spritesheet_attack_3_2
+      name: goku_spritesheet_attack_1_2
       rect:
         serializedVersion: 2
-        x: 322
+        x: 296
         y: 0
-        width: 158
-        height: 157
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 145
+        height: 118
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d49cec298da1ef4468c1cc75ce2bcba3
-      internalID: -1132899373
+      spriteID: 0dd9bdda71ca83448b02ac04962a00de
+      internalID: -1898598802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: goku_spritesheet_attack_3_3
+      name: goku_spritesheet_attack_1_3
       rect:
         serializedVersion: 2
-        x: 482
+        x: 443
         y: 0
-        width: 158
-        height: 157
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 145
+        height: 118
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8f55ddc494c9c84bb3f7654fe604a47
-      internalID: 1709197311
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: goku_spritesheet_attack_3_4
-      rect:
-        serializedVersion: 2
-        x: 642
-        y: 0
-        width: 158
-        height: 157
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b72b5039a825c0044a10a7b8459096a8
-      internalID: -761708219
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: goku_spritesheet_attack_3_5
-      rect:
-        serializedVersion: 2
-        x: 802
-        y: 0
-        width: 158
-        height: 157
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 675cbef92101bbe429b87ac73aa443f4
-      internalID: 2006350645
+      spriteID: fb32a88abbeca2049b64cbe37f755cbe
+      internalID: -75188886
       vertices: []
       indices: 
       edges: []
@@ -235,7 +191,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3b24e7a2f42bc6a4c84538107c2290d7
+    spriteID: f872e4ef978aa3a48ae431cead8c2d37
     internalID: 0
     vertices: []
     indices: 
@@ -245,12 +201,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      goku_spritesheet_attack_3_0: -7761591653286148944
-      goku_spritesheet_attack_3_1: 405646925
-      goku_spritesheet_attack_3_2: -1132899373
-      goku_spritesheet_attack_3_3: 1709197311
-      goku_spritesheet_attack_3_4: -761708219
-      goku_spritesheet_attack_3_5: 2006350645
+      goku_spritesheet_attack_1_0: 1264066334104768661
+      goku_spritesheet_attack_1_1: 514785186
+      goku_spritesheet_attack_1_2: -1898598802
+      goku_spritesheet_attack_1_3: -75188886
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
