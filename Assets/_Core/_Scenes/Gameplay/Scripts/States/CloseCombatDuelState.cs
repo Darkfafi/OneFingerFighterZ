@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
+using RaTweening;
 
 namespace OnePunchFighterZ.GameplayScene
 {
@@ -31,6 +32,7 @@ namespace OnePunchFighterZ.GameplayScene
 
 			_moveInputAction.Enable();
 
+			_duelMinigame.IntentResolvedEvent += OnIntentResolvedEvent;
 			_duelMinigame.SetData(new DuelMinigame.CoreData()
 			{
 				Count = 20,
@@ -41,6 +43,7 @@ namespace OnePunchFighterZ.GameplayScene
 
 		protected override void OnExit(bool isSwitch)
 		{
+			_duelMinigame.IntentResolvedEvent -= OnIntentResolvedEvent;
 			_duelMinigame.ClearData();
 			Dependency.OtherCharacter.DuelResources.MinigameView.ClearData();
 			Dependency.OtherCharacter.ResetState();
@@ -55,29 +58,79 @@ namespace OnePunchFighterZ.GameplayScene
 
 		private void OnMovePerformed(InputAction.CallbackContext context)
 		{
-			bool isCorrect = false;
 			Vector2 input = context.ReadValue<Vector2>();
 			switch(input.normalized)
 			{
 				case Vector2 v when v == Vector2.left:
 					_duelMinigame.Submit(InputType.Left);
-					Dependency.MainCharacter.DuelResources.Attack1Animation.Play();
 					break;
 				case Vector2 v when v == Vector2.right:
 					_duelMinigame.Submit(InputType.Right);
-					Dependency.MainCharacter.DuelResources.Attack2Animation.Play();
 					break;
 				case Vector2 v when v == Vector2.up:
 					_duelMinigame.Submit(InputType.Up);
-					Dependency.MainCharacter.DuelResources.Attack3Animation.Play();
 					break;
 				case Vector2 v when v == Vector2.down:
 					_duelMinigame.Submit(InputType.Down);
-					Dependency.MainCharacter.DuelResources.Attack4Animation.Play();
+					break;
+			}
+		}
+
+		private void OnIntentResolvedEvent(DuelMinigame.Intent intent, bool success)
+		{
+			switch(intent.InputType)
+			{
+				case InputType.Right:
+					if(success)
+					{
+						Dependency.MainCharacter.DuelResources.Attack2Animation.Play();
+					}
+					else
+					{
+						Dependency.MainCharacter.CoreResources.HitAnimation.Play();
+					}
+
+					Dependency.OtherCharacter.DuelResources.Attack2Animation.Play();
+					break;
+				case InputType.Left:
+					if(success)
+					{
+						Dependency.MainCharacter.DuelResources.Attack1Animation.Play();
+					}
+					else
+					{
+						Dependency.MainCharacter.CoreResources.HitAnimation.Play();
+					}
+
+					Dependency.OtherCharacter.DuelResources.Attack1Animation.Play();
+					break;
+				case InputType.Up:
+					if(success)
+					{
+						Dependency.MainCharacter.DuelResources.Attack3Animation.Play();
+					}
+					else
+					{
+						Dependency.MainCharacter.CoreResources.HitAnimation.Play();
+					}
+
+					Dependency.OtherCharacter.DuelResources.Attack3Animation.Play();
+					break;
+				case InputType.Down:
+					if(success)
+					{
+						Dependency.MainCharacter.DuelResources.Attack4Animation.Play();
+					}
+					else
+					{
+						Dependency.MainCharacter.CoreResources.HitAnimation.Play();
+					}
+
+					Dependency.OtherCharacter.DuelResources.Attack4Animation.Play();
 					break;
 			}
 
-			Debug.Log("IsCorrect: " + isCorrect);
+			Camera.main.transform.TweenShakePos(0.05f, 0.2f).OnComplete(() => Camera.main.transform.position = new Vector3(0f, 0, -10f));
 		}
 	}
 }

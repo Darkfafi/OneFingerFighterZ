@@ -32,9 +32,14 @@ namespace OnePunchFighterZ.GameplayScene
 
 		public void ResetState()
 		{
+			StopAnimations();
+			CoreResources.IdleAnimation.Play();
+		}
+
+		public void StopAnimations()
+		{
 			CoreResources.StopAnimations();
 			DuelResources.StopAnimations();
-			CoreResources.IdleAnimation.Play();
 		}
 
 		protected void OnDestroy()
@@ -52,9 +57,16 @@ namespace OnePunchFighterZ.GameplayScene
 			get; private set;
 		}
 
+		[field: SerializeField]
+		public RaTweenerComponent HitAnimation
+		{
+			get; private set;
+		}
+
 		public void StopAnimations()
 		{
 			IdleAnimation.Stop();
+			HitAnimation.Stop();
 		}
 	}
 
