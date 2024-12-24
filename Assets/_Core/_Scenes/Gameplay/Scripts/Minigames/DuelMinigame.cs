@@ -7,8 +7,9 @@ namespace OnePunchFighterZ.GameplayScene
 {
 	public class DuelMinigame : RaMonoDataHolderBase<DuelMinigame.CoreData>
 	{
+		public event Action StoppedPlayingEvent;
 		public event Action PositionChangedEvent;
-		public event Action<Intent> IntentResolvedEvent;
+		public event Action<Intent, bool> IntentResolvedEvent;
 
 		[SerializeField]
 		private float _startPosition = 200;
@@ -30,6 +31,7 @@ namespace OnePunchFighterZ.GameplayScene
 		public float ExecutionPosition => _executionPoint;
 		public float Position => _position;
 		public float Offset => _offset;
+		public float Speed => _speed;
 
 		public bool IsPlaying
 		{
@@ -60,6 +62,7 @@ namespace OnePunchFighterZ.GameplayScene
 		{
 			ResetMinigame();
 			IsPlaying = false;
+			StoppedPlayingEvent?.Invoke();
 		}
 
 		protected void Update()
@@ -68,13 +71,19 @@ namespace OnePunchFighterZ.GameplayScene
 			{
 				return;
 			}
+
+			SetPosition(_position - Time.deltaTime * _speed);
+
+			if(_position <= 0)
+			{
+				ResolveIntent(false);
+			}
 		}
 
-		public bool Submit(InputType inputType, out bool isCorrect)
+		public bool Submit(InputType inputType)
 		{
 			if(!IsPlaying)
 			{
-				isCorrect = default;
 				return false;
 			}
 
@@ -82,37 +91,37 @@ namespace OnePunchFighterZ.GameplayScene
 			{
 				if(nextIntent.InputType == inputType)
 				{
-					ResolveIntent();
-					isCorrect = true;
+					ResolveIntent(true);
 				}
 				else
 				{
-					ResolveIntent();
-					isCorrect = false;
+					ResolveIntent(false);
 				}
 
 				return true;
 			}
 
-			isCorrect = default;
 			return false;
 		}
 
-		private void ResolveIntent()
+		private void ResolveIntent(bool success)
 		{
 			if(_intents.TryDequeue(out var intent))
 			{
-				IntentResolvedEvent?.Invoke(intent);
+				IntentResolvedEvent?.Invoke(intent, success);
 			}
+
+			float origin = Mathf.Min(_executionPoint, _position);
 
 			if(_intents.TryPeek(out _))
 			{
-				SetPosition(_executionPoint + Offset);
+				SetPosition(origin + Offset);
 			}
 			else
 			{
-				SetPosition(_executionPoint);
+				SetPosition(origin);
 				IsPlaying = false;
+				StoppedPlayingEvent?.Invoke();
 			}
 		}
 

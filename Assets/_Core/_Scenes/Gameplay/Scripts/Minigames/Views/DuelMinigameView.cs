@@ -1,5 +1,5 @@
 ﻿using RaDataHolder;
-using System;
+using RaTweening;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -45,11 +45,13 @@ namespace OnePunchFighterZ.GameplayScene
 
 			Data.PositionChangedEvent += OnPositionChanged;
 			Data.IntentResolvedEvent += OnIntentResolvedEvent;
+			Data.StoppedPlayingEvent += OnStoppedPlayingEvent;
 			OnPositionChanged();
 		}
 
 		protected override void OnClearData()
 		{
+			Data.StoppedPlayingEvent -= OnStoppedPlayingEvent;
 			Data.PositionChangedEvent -= OnPositionChanged;
 			Data.IntentResolvedEvent -= OnIntentResolvedEvent;
 
@@ -68,16 +70,42 @@ namespace OnePunchFighterZ.GameplayScene
 
 		private void OnPositionChanged()
 		{
-			_verticalLayoutGroup.padding = new RectOffset(left: 0, right: 0, top: 0, bottom: (int)Data.Position);
+			if(Mathf.Abs(Data.Position - _verticalLayoutGroup.padding.bottom) > 40)
+			{
+				RaTweenLambda.TweenFloat
+				(
+					_verticalLayoutGroup.padding.bottom, Data.Position, 0.1f,
+					(x, n) => _verticalLayoutGroup.padding = new RectOffset(left: 0, right: 0, top: 0, bottom: (int)x),
+					() => this && _verticalLayoutGroup != null
+				).SetGroup(_verticalLayoutGroup);
+			}
+			else
+			{
+				RaTween.StopGroup(_verticalLayoutGroup);
+				_verticalLayoutGroup.padding = new RectOffset(left: 0, right: 0, top: 0, bottom: (int)Data.Position);
+			}
 		}
 
-		private void OnIntentResolvedEvent(DuelMinigame.Intent intent)
+		private void OnIntentResolvedEvent(DuelMinigame.Intent intent, bool success)
 		{
 			if(_instanceMap.TryGetValue(intent, out var instance))
 			{
 				instance.GetComponent<LayoutElement>().ignoreLayout = true;
-				//Destroy(instance.gameObject);
+
+				Color color = success ? Color.green : Color.red;
+				color.a = 0.45f;
+				instance.TweenColor(color, 0.25f);
 			}
+		}
+
+		private void OnStoppedPlayingEvent()
+		{
+			RaTweenLambda.TweenFloat
+			(
+				_verticalLayoutGroup.padding.bottom, 0, _verticalLayoutGroup.padding.bottom / Data.Speed,
+				(x, n) => _verticalLayoutGroup.padding = new RectOffset(left: 0, right: 0, top: 0, bottom: (int)x),
+				() => this && _verticalLayoutGroup != null
+			).SetGroup(_verticalLayoutGroup);
 		}
 	}
 }

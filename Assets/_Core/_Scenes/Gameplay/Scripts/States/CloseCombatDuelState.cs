@@ -60,19 +60,19 @@ namespace OnePunchFighterZ.GameplayScene
 			switch(input.normalized)
 			{
 				case Vector2 v when v == Vector2.left:
-					_duelMinigame.Submit(InputType.Left, out isCorrect);
+					_duelMinigame.Submit(InputType.Left);
 					Dependency.MainCharacter.DuelResources.Attack1Animation.Play();
 					break;
 				case Vector2 v when v == Vector2.right:
-					_duelMinigame.Submit(InputType.Right, out isCorrect);
+					_duelMinigame.Submit(InputType.Right);
 					Dependency.MainCharacter.DuelResources.Attack2Animation.Play();
 					break;
 				case Vector2 v when v == Vector2.up:
-					_duelMinigame.Submit(InputType.Up, out isCorrect);
+					_duelMinigame.Submit(InputType.Up);
 					Dependency.MainCharacter.DuelResources.Attack3Animation.Play();
 					break;
 				case Vector2 v when v == Vector2.down:
-					_duelMinigame.Submit(InputType.Down, out isCorrect);
+					_duelMinigame.Submit(InputType.Down);
 					Dependency.MainCharacter.DuelResources.Attack4Animation.Play();
 					break;
 			}

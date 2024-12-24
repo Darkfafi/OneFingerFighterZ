@@ -857,7 +857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startPosition: 200
   _executionPoint: 30
-  _speed: 1
+  _speed: 45
   _offset: 45
 --- !u!1 &1837257791
 GameObject:
