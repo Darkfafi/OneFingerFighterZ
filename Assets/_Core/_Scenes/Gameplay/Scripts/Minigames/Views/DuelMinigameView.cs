@@ -70,7 +70,7 @@ namespace OnePunchFighterZ.GameplayScene
 
 		private void OnPositionChanged()
 		{
-			if(Mathf.Abs(Data.Position - _verticalLayoutGroup.padding.bottom) > 40)
+			if(Mathf.Abs(Data.Position - _verticalLayoutGroup.padding.bottom) > Data.Offset)
 			{
 				RaTweenLambda.TweenFloat
 				(
