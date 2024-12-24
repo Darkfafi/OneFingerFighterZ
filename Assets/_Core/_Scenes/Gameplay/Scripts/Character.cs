@@ -1,6 +1,6 @@
-using UnityEngine;
 using RaTweening;
 using System;
+using UnityEngine;
 
 namespace OnePunchFighterZ.GameplayScene
 {
@@ -14,40 +14,52 @@ namespace OnePunchFighterZ.GameplayScene
 
 		[Header("Animations")]
 		[field: SerializeField]
-		public CoreAnimations CoreAnimations
+		public CoreResources CoreResources
 		{
 			get; private set;
 		}
 
 		[field: SerializeField]
-		public DuelAnimations DuelAnimations
+		public DuelResources DuelResources
 		{
 			get; private set;
 		}
 
 		protected void Awake()
 		{
-			CoreAnimations.IdleAnimation.Play();
+			ResetState();
+		}
+
+		public void ResetState()
+		{
+			CoreResources.StopAnimations();
+			DuelResources.StopAnimations();
+			CoreResources.IdleAnimation.Play();
 		}
 
 		protected void OnDestroy()
 		{
-			
+
 		}
 	}
 
 	[Serializable]
-	public struct CoreAnimations
+	public struct CoreResources
 	{
 		[field: SerializeField]
 		public RaTweenerComponent IdleAnimation
 		{
 			get; private set;
 		}
+
+		public void StopAnimations()
+		{
+			IdleAnimation.Stop();
+		}
 	}
 
 	[Serializable]
-	public struct DuelAnimations
+	public struct DuelResources
 	{
 		[field: SerializeField]
 		public RaTweenerComponent Attack1Animation
@@ -71,6 +83,20 @@ namespace OnePunchFighterZ.GameplayScene
 		public RaTweenerComponent Attack4Animation
 		{
 			get; private set;
+		}
+
+		[field: SerializeField]
+		public DuelMinigameView MinigameView
+		{
+			get; private set;
+		}
+
+		public void StopAnimations()
+		{
+			Attack1Animation.Stop();
+			Attack2Animation.Stop();
+			Attack3Animation.Stop();
+			Attack4Animation.Stop();
 		}
 	}
 }

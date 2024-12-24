@@ -11,6 +11,9 @@ namespace OnePunchFighterZ.GameplayScene
 		[SerializeField]
 		private Transform _otherPlayerCloseCombatPosition = null;
 
+		[SerializeField]
+		private DuelMinigame _duelMinigame = null;
+
 		private InputAction _moveInputAction = null;
 
 		protected override void OnInit()
@@ -27,10 +30,21 @@ namespace OnePunchFighterZ.GameplayScene
 			Dependency.OtherCharacter.transform.position = _otherPlayerCloseCombatPosition.transform.position;
 
 			_moveInputAction.Enable();
+
+			_duelMinigame.SetData(new DuelMinigame.CoreData()
+			{
+				Count = 20,
+			});
+
+			Dependency.OtherCharacter.DuelResources.MinigameView.SetData(_duelMinigame);
 		}
 
 		protected override void OnExit(bool isSwitch)
 		{
+			_duelMinigame.ClearData();
+			Dependency.OtherCharacter.DuelResources.MinigameView.ClearData();
+			Dependency.OtherCharacter.ResetState();
+
 			_moveInputAction.Disable();
 		}
 
@@ -41,22 +55,29 @@ namespace OnePunchFighterZ.GameplayScene
 
 		private void OnMovePerformed(InputAction.CallbackContext context)
 		{
+			bool isCorrect = false;
 			Vector2 input = context.ReadValue<Vector2>();
 			switch(input.normalized)
 			{
 				case Vector2 v when v == Vector2.left:
-					Dependency.MainCharacter.DuelAnimations.Attack1Animation.Play();
+					_duelMinigame.Submit(InputType.Left, out isCorrect);
+					Dependency.MainCharacter.DuelResources.Attack1Animation.Play();
 					break;
 				case Vector2 v when v == Vector2.right:
-					Dependency.MainCharacter.DuelAnimations.Attack2Animation.Play();
+					_duelMinigame.Submit(InputType.Right, out isCorrect);
+					Dependency.MainCharacter.DuelResources.Attack2Animation.Play();
 					break;
 				case Vector2 v when v == Vector2.up:
-					Dependency.MainCharacter.DuelAnimations.Attack3Animation.Play();
+					_duelMinigame.Submit(InputType.Up, out isCorrect);
+					Dependency.MainCharacter.DuelResources.Attack3Animation.Play();
 					break;
 				case Vector2 v when v == Vector2.down:
-					Dependency.MainCharacter.DuelAnimations.Attack4Animation.Play();
+					_duelMinigame.Submit(InputType.Down, out isCorrect);
+					Dependency.MainCharacter.DuelResources.Attack4Animation.Play();
 					break;
 			}
+
+			Debug.Log("IsCorrect: " + isCorrect);
 		}
 	}
 }
