@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using RaCollection;
+using UnityEngine;
 
-public class Entity : MonoBehaviour
+public class Entity : MonoBehaviour, IRaCollectionElement
 {
-	public delegate void PositionHandler(Entity entity, float newPosition, float oldPosition);
+	public delegate void PositionHandler(Entity entity, float newPosition, float oldPosition, object metadata);
 	public event PositionHandler PositionChangedEvent;
 
 	[field: SerializeField]
@@ -16,6 +17,8 @@ public class Entity : MonoBehaviour
 	{
 		get; private set;
 	}
+
+	public string Id => GetInstanceID().ToString();
 
 	protected void OnDestroy()
 	{
@@ -56,11 +59,11 @@ public class Entity : MonoBehaviour
 		}
 	}
 
-	public void SetPosition(float position)
+	public void SetPosition(float position, object metadata = null)
 	{
 		float oldPisition = Position;
 		Position = position;
-		PositionChangedEvent?.Invoke(this, Position, oldPisition);
+		PositionChangedEvent?.Invoke(this, Position, oldPisition, metadata);
 	}
 
 	public static Direction GetDirection(float origin, float target)

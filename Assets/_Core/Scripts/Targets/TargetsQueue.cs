@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using RaCollection;
+using System;
 
 public class TargetsQueue : IDisposable
 {
 	private Direction _sortingDirection = Direction.Left;
 	private Entity _centerEntity = null;
-	private List<Target> _targets = new List<Target>();
+	private RaElementCollection<Target> _targets = new RaElementCollection<Target>();
 
-	public IReadOnlyList<Target> Targets => _targets;
+	public IReadOnlyRaElementCollection<Target> Targets => _targets;
+	public Direction SortingDirection => _sortingDirection;
 
 	public TargetsQueue(Entity centerEntity, Direction sortingDirection)
 	{
@@ -56,7 +57,7 @@ public class TargetsQueue : IDisposable
 
 	public void Remove(Target target)
 	{
-		_targets.Remove(target);
+		_targets.Remove(target.Id);
 	}
 
 	public void Evaluate()

@@ -51,6 +51,9 @@ public class TestSceneRoot : MonoBehaviour
 
 			// Push Back Target
 			frontTarget.SetPosition(_targetsManager.CenterEntity.GetSidePosition(frontTarget, Direction.None, 50));
+
+			// Hit (Remove when no components left)
+			_targetsManager.Remove(frontTarget);
 		}
 	}
 

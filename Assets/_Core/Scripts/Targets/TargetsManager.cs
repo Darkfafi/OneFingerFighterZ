@@ -27,18 +27,28 @@ public class TargetsManager : MonoBehaviour
 	{
 		_leftQueue = new TargetsQueue(_centerEntity, Direction.Right);
 		_rightQueue = new TargetsQueue(_centerEntity, Direction.Left);
-		_centerEntity.PositionChangedEvent += OnCenterPosChangedEvent;
 	}
 
-	private void OnCenterPosChangedEvent(Entity entity, float newPosition, float oldPosition)
+	protected void OnDestroy()
 	{
-		((RectTransform)_container.transform).anchoredPosition = new Vector2(-newPosition, 0);
+		if(_leftQueue != null)
+		{
+			_leftQueue.Dispose();
+			_leftQueue = null;
+		}
+
+		if(_rightQueue != null)
+		{
+			_rightQueue.Dispose();
+			_rightQueue = null;
+		}
 	}
 
 	public Target Create(Direction direction, int index = 0, float position = 0, bool isRelativePosition = true)
 	{
 		Target target = Instantiate(_prefab, _container);
-		
+		target.transform.localPosition = Vector3.zero;
+
 		_instances.Add(target);
 		
 		TargetsQueue queue = GetTargetsQueue(direction);
@@ -46,10 +56,10 @@ public class TargetsManager : MonoBehaviour
 
 		if(isRelativePosition)
 		{
-			position += _centerEntity.Position;
+			position = _centerEntity.GetSidePosition(target, direction, position);
 		}
 
-		target.SetPosition(position);
+		target.SetPosition(position, Target.SpawnPositionMetadata);
 
 		queue.Evaluate();
 
@@ -67,6 +77,9 @@ public class TargetsManager : MonoBehaviour
 	{
 		if(_instances.Remove(target))
 		{
+			_leftQueue.Remove(target);
+			_rightQueue.Remove(target);
+
 			if(destroy)
 			{
 				Destroy(target.gameObject);

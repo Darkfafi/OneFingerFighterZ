@@ -2,6 +2,8 @@
 
 public class Target : Entity
 {
+	public static readonly object SpawnPositionMetadata = new object();
+
 	[SerializeField]
 	private float _speed = 50;
 

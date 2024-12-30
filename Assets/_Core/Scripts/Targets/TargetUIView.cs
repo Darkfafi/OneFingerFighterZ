@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using RaTweening;
+using UnityEngine;
 
 public class TargetUIView : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class TargetUIView : MonoBehaviour
 
 	protected void Start()
 	{
-		OnPositionChangedEvent(_target, _target.Position, 0);
+		OnPositionChangedEvent(_target, _target.Position, 0, Target.SpawnPositionMetadata);
 	}
 
 	protected void OnDestroy()
@@ -23,8 +24,17 @@ public class TargetUIView : MonoBehaviour
 		}
 	}
 
-	private void OnPositionChangedEvent(Entity entity, float newPosition, float oldPosition)
+	private void OnPositionChangedEvent(Entity entity, float newPosition, float oldPosition, object metadata)
 	{
-		((RectTransform)transform).anchoredPosition = new Vector2(newPosition, 0);
+		RaTween.StopGroup(this);
+
+		if(metadata == Target.SpawnPositionMetadata)
+		{
+			((RectTransform)transform).anchoredPosition = new Vector2(newPosition, 0);
+		}
+		else
+		{
+			((RectTransform)transform).TweenAnchorPosX(newPosition, 0.1f).SetGroup(this);
+		}
 	}
 }

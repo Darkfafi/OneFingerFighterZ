@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2f5a1b98411044bb378d90224bb04d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Radius>k__BackingField: 50
+  <Radius>k__BackingField: 25
   <Position>k__BackingField: 0
   _speed: 50
 --- !u!114 &2099449084756032528
