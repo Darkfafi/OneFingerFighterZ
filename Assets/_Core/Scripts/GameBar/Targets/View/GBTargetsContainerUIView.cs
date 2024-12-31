@@ -1,10 +1,10 @@
 ﻿using RaTweening;
 using UnityEngine;
 
-public class TargetsConainerUIView : MonoBehaviour
+public class GBTargetsContainerUIView : MonoBehaviour
 {
 	[SerializeField]
-	private TargetsManager _targetsManager = null;
+	private GBTargetsManager _targetsManager = null;
 
 	protected void Awake()
 	{
@@ -22,7 +22,7 @@ public class TargetsConainerUIView : MonoBehaviour
 		}
 	}
 
-	private void OnCenterPositionChangedEvent(Entity entity, float newPosition, float oldPosition, object metadata)
+	private void OnCenterPositionChangedEvent(GBEntity entity, float newPosition, float oldPosition, object metadata)
 	{
 		RaTween.StopGroup(this);
 		((RectTransform)transform).TweenAnchorPosX(-newPosition, 0.1f).SetGroup(this);

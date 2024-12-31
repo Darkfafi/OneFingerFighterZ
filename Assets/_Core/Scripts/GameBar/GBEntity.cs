@@ -1,9 +1,12 @@
 ﻿using RaCollection;
 using UnityEngine;
 
-public class Entity : MonoBehaviour, IRaCollectionElement
+public class GBEntity : MonoBehaviour, IRaCollectionElement
 {
-	public delegate void PositionHandler(Entity entity, float newPosition, float oldPosition, object metadata);
+	public delegate void EntityHandler(GBEntity entity);
+	public event EntityHandler DestroyedEvent;
+
+	public delegate void PositionHandler(GBEntity entity, float newPosition, float oldPosition, object metadata);
 	public event PositionHandler PositionChangedEvent;
 
 	[field: SerializeField]
@@ -22,34 +25,37 @@ public class Entity : MonoBehaviour, IRaCollectionElement
 
 	protected void OnDestroy()
 	{
+		DestroyedEvent?.Invoke(this);
+
 		PositionChangedEvent = null;
+		DestroyedEvent = null;
 	}
 
-	public float GetSidePosition(float observerPosition, Direction direction = Direction.None)
+	public float GetSidePosition(float observerPosition, GBDirection direction = GBDirection.None, float offset = 0f)
 	{
-		if(direction == Direction.None)
+		if(direction == GBDirection.None)
 		{
 			direction = GetDirection(observerPosition, Position);
 		}
 
-		if(direction == Direction.Right)
+		if(direction == GBDirection.Right)
 		{
-			return Position - Radius;
+			return Position - Radius - offset;
 		}
 		else
 		{
-			return Position + Radius;
+			return Position + Radius + offset;
 		}
 	}
 
-	public float GetSidePosition(Entity observerEntity, Direction direction, float offset = 0)
+	public float GetSidePosition(GBEntity observerEntity, GBDirection direction, float offset = 0)
 	{
-		if(direction == Direction.None)
+		if(direction == GBDirection.None)
 		{
 			direction = GetDirection(observerEntity.Position, Position);
 		}
 
-		if(direction == Direction.Right)
+		if(direction == GBDirection.Right)
 		{
 			return (Position - Radius) - observerEntity.Radius - offset;
 		}
@@ -66,17 +72,17 @@ public class Entity : MonoBehaviour, IRaCollectionElement
 		PositionChangedEvent?.Invoke(this, Position, oldPisition, metadata);
 	}
 
-	public static Direction GetDirection(float origin, float target)
+	public static GBDirection GetDirection(float origin, float target)
 	{
 		if(origin < target)
 		{
-			return Direction.Right;
+			return GBDirection.Right;
 		}
 		else if(origin > target)
 		{
-			return Direction.Left;
+			return GBDirection.Left;
 		}
 
-		return Direction.None;
+		return GBDirection.None;
 	}
 }

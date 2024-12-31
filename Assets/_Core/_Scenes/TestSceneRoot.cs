@@ -3,62 +3,18 @@
 public class TestSceneRoot : MonoBehaviour
 {
 	[SerializeField]
-	private TargetsManager _targetsManager = null;
-	
-	protected void Awake()
-	{
-		
-	}
+	private GBGameplayManager _targetsManager = null;
 
 	protected void Start()
 	{
-
-	}
-
-	protected void Update()
-	{
-		_targetsManager.Evaluate();
-
-		if(Input.GetKeyDown(KeyCode.E))
-		{
-			_targetsManager.Create(Direction.Right);
-		}
-
-		if(Input.GetKeyDown(KeyCode.Q))
-		{
-			_targetsManager.Create(Direction.Left);
-		}
-
-		if(Input.GetKeyDown(KeyCode.A))
-		{
-			Submit(Direction.Left);
-		}
-
-		if(Input.GetKeyDown(KeyCode.D))
-		{
-			Submit(Direction.Right);
-		}
-	}
-
-	public void Submit(Direction direction)
-	{
-		if(_targetsManager.GetTargetsQueue(direction).TryGetFront(out Target frontTarget))
-		{
-			float impactPosition = frontTarget.GetSidePosition(_targetsManager.CenterEntity, direction);
-			
-			// Teleport Center Entity
-			_targetsManager.CenterEntity.SetPosition(impactPosition);
-
-			// Push Back Target
-			frontTarget.SetPosition(_targetsManager.CenterEntity.GetSidePosition(frontTarget, Direction.None, 50));
-
-			// Hit (Remove when no components left)
-			_targetsManager.Remove(frontTarget);
-		}
+		_targetsManager.StartLevel(20);
 	}
 
 	protected void OnDestroy()
 	{
-
+		if(_targetsManager != null)
+		{
+			_targetsManager.EndLevel();
+		}
 	}
 }

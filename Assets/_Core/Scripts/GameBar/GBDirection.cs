@@ -1,4 +1,4 @@
-﻿public enum Direction
+﻿public enum GBDirection
 {
 	None = 0,
 	Right = 1,
